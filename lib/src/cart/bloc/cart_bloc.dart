@@ -22,9 +22,8 @@ class CartBloc extends Bloc<CartEvent, CartState> {
 
   void _updateCartItemsHandler(
       UpdateCartQtyEvent event, Emitter<CartState> emitter) async {
-    emit(CartInitial());
-    final index =
-        cartItems.indexWhere((item) => item.prID == event.product.prID);
+    emit(const CartInitial());
+    final index = cartItems.indexWhere((item) => item.prID == event.product.prID);
     if (event.counterEvent == CounterEvent.decrement) {
       if (index != -1) {
         if (cartItems[index].qty > 0) {

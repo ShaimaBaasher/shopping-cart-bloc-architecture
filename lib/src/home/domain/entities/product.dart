@@ -15,5 +15,5 @@ class Product extends Equatable {
   int qty;
 
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [prID];
 }
