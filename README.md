@@ -6,4 +6,4 @@ Shopping Cart Project.
 
 This project is simple shopping cart project using Bloc + clean-architecture + GetIt.
 
-All you need to do to run the code to just fetch the code.
+All you need to do to run the code is just fetch the code.
