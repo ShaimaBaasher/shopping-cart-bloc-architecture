@@ -1,0 +1,2 @@
+
+typedef ResultProducts<T> = T;
