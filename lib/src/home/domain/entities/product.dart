@@ -4,6 +4,7 @@ class Product extends Equatable {
 
    Product({
     required this.prID,
+    required this.img,
     required this.prName,
     required this.price,
     required this.qty,
@@ -11,6 +12,7 @@ class Product extends Equatable {
 
   final int prID;
   final String prName;
+  final String img;
   final dynamic price;
   int qty;
 
