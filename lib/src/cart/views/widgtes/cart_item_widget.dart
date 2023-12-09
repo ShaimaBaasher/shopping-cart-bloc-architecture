@@ -47,7 +47,7 @@ class CartItemWidget extends StatelessWidget {
             Row(
               children: [
                 CustomImageView(
-                  imagePath: model.img,
+                  url: model.img,
                   width: 102 * fem,
                   height: 85 * fem,
                   radius: BorderRadius.circular(
