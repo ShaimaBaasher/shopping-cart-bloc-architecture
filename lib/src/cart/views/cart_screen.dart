@@ -6,6 +6,8 @@ import 'package:shopping_cart/src/cart/views/widgtes/cart_item_widget.dart';
 import 'package:shopping_cart/src/cart/views/widgtes/empty_cart_widget.dart';
 import 'package:shopping_cart/src/cart/views/widgtes/loading_widget.dart';
 
+import '../../../core/theme/colors.dart';
+
 class CartScreen extends StatelessWidget {
   const CartScreen({Key? key}) : super(key: key);
 
@@ -28,7 +30,7 @@ class CartScreen extends StatelessWidget {
                 toastLength: Toast.LENGTH_SHORT,
                 gravity: ToastGravity.CENTER,
                 timeInSecForIosWeb: 1,
-                backgroundColor: Colors.green,
+                backgroundColor: success400,
                 textColor: Colors.white,
                 fontSize: 16.0);
             getCartItem(context);

@@ -6,12 +6,20 @@ import 'colors.dart';
 
 final buttonHeight = 48*fem;
 
-final textFieldMedium = SafeGoogleFont(
+final textMedium = SafeGoogleFont(
   'Poppins',
   fontSize: 16*ffem,
   fontWeight: FontWeight.w500,
   height: 1.5*ffem/fem,
-  color: Color(0xff18181b),
+  color: neutralNeutral900default,
+);
+
+final label = SafeGoogleFont(
+  'Poppins',
+  fontSize: 16*ffem,
+  fontWeight: FontWeight.w500,
+  height: 1.5*ffem/fem,
+  color: warning300Default,
 );
 
 final placeHolder = SafeGoogleFont(

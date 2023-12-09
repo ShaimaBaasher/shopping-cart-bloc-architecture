@@ -4,11 +4,7 @@ import 'package:flutter/material.dart';
 
 MediaQueryData mediaQueryData = MediaQueryData.fromWindow(ui.window);
 
-const num FIGMA_DESIGN_WIDTH = 1427;
-const num FIGMA_DESIGN_HEIGHT = 812;
-const num FIGMA_DESIGN_STATUS_BAR = 0;
-
-double baseWidth = 1427;
+double baseWidth = 375;
 double fem = mediaQueryData.size.width / baseWidth;
 double ffem = fem * 0.97;
 
