@@ -24,7 +24,8 @@ class RemoveItemFromCartEvent extends CartEvent {
 class UpdateCartQtyEvent extends CartEvent {
   final Product product;
   final CounterEvent counterEvent;
-  const UpdateCartQtyEvent(this.product, this.counterEvent);
+  final int minimumDecrement;
+  const UpdateCartQtyEvent({required this.product, required this.counterEvent, required this.minimumDecrement});
   @override
   List<Object> get props => [product.prID,];
 }

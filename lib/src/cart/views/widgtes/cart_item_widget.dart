@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/size_utils.dart';
 import '../../../../core/theme/style.dart';
+import '../../../../core/utils/enums.dart';
 import '../../../home/domain/entities/product.dart';
 import '../../../home/presentation/bloc/home_bloc.dart';
 import '../../../home/presentation/views/widgets/custom_image_view.dart';
@@ -64,7 +65,26 @@ class CartItemWidget extends StatelessWidget {
                 ],)
               ],
             ),
-            Text('${model.qty} x', style: label.copyWith(color: neutralNeutral900default))
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                IconButton(
+                  onPressed: () {
+                    context.read<HomeBloc>().add(UpdateProductQtyEvent(product: model, counterEvent: CounterEvent.decrement, minimumDecrement: 1));
+                    context.read<CartBloc>().add(UpdateCartQtyEvent(product: model, counterEvent: CounterEvent.decrement, minimumDecrement: 1));
+                    },
+                  icon: const Icon(Icons.remove_circle_outlined, color: error300Default,),
+                ),
+                Text('${model.qty} x', style: label.copyWith(color: neutralNeutral900default)),
+                IconButton(
+                  onPressed: () {
+                    context.read<HomeBloc>().add(UpdateProductQtyEvent(product: model, counterEvent: CounterEvent.increment, minimumDecrement: 1));
+                    context.read<CartBloc>().add(UpdateCartQtyEvent(product: model, counterEvent: CounterEvent.increment, minimumDecrement: 1));
+                    },
+                  icon: const Icon(Icons.add_circle, color: success400,),
+                ),
+              ],
+            ),
           ],
         ),
       )

@@ -53,25 +53,21 @@ class ProductWidget extends StatelessWidget {
           children: [
             IconButton(
               onPressed: () {
-                context.read<HomeBloc>().add(
-                    UpdateProductQtyEvent(product, CounterEvent.decrement));
-                context.read<CartBloc>().add(
-                    UpdateCartQtyEvent(product, CounterEvent.decrement));
-              },
+                context.read<HomeBloc>().add(UpdateProductQtyEvent(product: product, counterEvent: CounterEvent.decrement, minimumDecrement: 0));
+                context.read<CartBloc>().add(UpdateCartQtyEvent(product: product, counterEvent: CounterEvent.decrement, minimumDecrement: 0));
+                },
               icon: const Icon(Icons.remove_circle_outlined, color: error300Default,),
             ),
             Text('${product.qty}'),
             IconButton(
               onPressed: () {
-                context.read<HomeBloc>().add(
-                    UpdateProductQtyEvent(product, CounterEvent.increment));
-                context.read<CartBloc>().add(
-                    UpdateCartQtyEvent(product, CounterEvent.increment));
+                context.read<HomeBloc>().add(UpdateProductQtyEvent(product: product, counterEvent: CounterEvent.increment, minimumDecrement: 0));
+                context.read<CartBloc>().add(UpdateCartQtyEvent(product: product, counterEvent: CounterEvent.increment, minimumDecrement: 0));
               },
               icon: const Icon(Icons.add_circle, color: success400,),
             ),
           ],
-        )
+        ),
       ],),);
   }
 }

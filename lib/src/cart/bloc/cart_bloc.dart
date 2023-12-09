@@ -20,18 +20,21 @@ class CartBloc extends Bloc<CartEvent, CartState> {
 
   var cartItems = <Product>[];
 
-  void _updateCartItemsHandler(
-      UpdateCartQtyEvent event, Emitter<CartState> emitter) async {
+  void _updateCartItemsHandler(UpdateCartQtyEvent event, Emitter<CartState> emitter) async {
     emit(const CartInitial());
     final index = cartItems.indexWhere((item) => item.prID == event.product.prID);
     if (event.counterEvent == CounterEvent.decrement) {
       if (index != -1) {
-        if (cartItems[index].qty > 0) {
-          cartItems[index] = event.product;
+        if (cartItems[index].qty > event.minimumDecrement) {
+            cartItems[index] = event.product;
           emit(CartGetItemsState(cartItems));
         } else {
-          cartItems.removeAt(index);
-          checkCartListIfIsEmpty();
+          if (event.minimumDecrement != 1) {
+            cartItems.removeAt(index);
+            checkCartListIfIsEmpty();
+          } else {
+            emit(CartGetItemsState(cartItems));
+          }
         }
       }
     } else {
@@ -44,23 +47,22 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     }
   }
 
-  void _getCartItemsHandler(
-      GetCartItemsEvent event, Emitter<CartState> emitter) {
+  void _getCartItemsHandler(GetCartItemsEvent event, Emitter<CartState> emitter) {
     checkCartListIfIsEmpty();
   }
 
   void _removeCartItemsHandler(
       RemoveItemFromCartEvent event, Emitter<CartState> emitter) {
-    emit(CartInitial());
+    emit(const CartInitial());
     cartItems.removeWhere((item) => item.prID == event.product.prID);
     checkCartListIfIsEmpty();
   }
 
   void _placeOrderHandler(PlaceOrderEvent event, Emitter<CartState> emitter) {
     if (cartItems.isNotEmpty) {
-      emit(CartOrderIsLoadingState());
+      emit(const CartOrderIsLoadingState());
       Future.delayed(const Duration(seconds: 2), () {
-        emit(CartPlaceOrderState());
+        emit(const CartPlaceOrderState());
       });
     }
   }

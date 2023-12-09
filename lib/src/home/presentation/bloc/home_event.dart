@@ -17,7 +17,8 @@ class GetLoadedProductsEvent extends HomeEvent {
 class UpdateProductQtyEvent extends HomeEvent {
   final Product product;
   final CounterEvent counterEvent;
-  const UpdateProductQtyEvent(this.product, this.counterEvent);
+  final int minimumDecrement;
+  const UpdateProductQtyEvent({required this.product, required this.counterEvent, required this.minimumDecrement});
   @override
   List<Object> get props => [product,];
 }

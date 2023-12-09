@@ -38,7 +38,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     if (event.counterEvent == CounterEvent.increment) {
       event.product.qty++;
     } else {
-      if (event.product.qty > 0) {
+      if (event.product.qty > event.minimumDecrement) {
         event.product.qty--;
       }
     }
