@@ -8,17 +8,13 @@ abstract class HomeState extends Equatable {
 
 class HomeInitial extends HomeState {}
 
-class ProductsLoadedState extends HomeState {
-  const ProductsLoadedState();
+class ProductLoadedState extends HomeState {
+  const ProductLoadedState(this.products);
+  final List<Product> products;
 }
 
 class UpdateProdQtyState extends HomeState {
   const UpdateProdQtyState();
-}
-
-class ProductLoadedState extends HomeState {
-  const ProductLoadedState(this.products);
-  final List<Product> products;
 }
 
 class ResetProduct extends HomeState {

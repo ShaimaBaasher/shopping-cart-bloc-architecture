@@ -10,12 +10,9 @@ class CartInitial extends CartState {
   const CartInitial();
 }
 
-class CartOrderIsLoadingState extends CartState {
-  const CartOrderIsLoadingState();
-}
-
-class CartPlaceOrderState extends CartState {
-  const CartPlaceOrderState();
+class CartGetItems extends CartState {
+  final ResultProducts<List<ProductModel>> cartItems;
+  const CartGetItems(this.cartItems);
 }
 
 class CartGetItemsState extends CartState {
@@ -27,8 +24,11 @@ class EmptyCartState extends CartState {
   const EmptyCartState();
 }
 
-class CartGetItems extends CartState {
-  final ResultProducts<List<ProductModel>> cartItems;
-  const CartGetItems(this.cartItems);
+class CartOrderIsLoadingState extends CartState {
+  const CartOrderIsLoadingState();
+}
+
+class CartPlaceOrderState extends CartState {
+  const CartPlaceOrderState();
 }
 
