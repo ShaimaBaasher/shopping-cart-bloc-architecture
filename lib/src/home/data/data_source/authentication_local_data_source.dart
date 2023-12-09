@@ -11,10 +11,10 @@ class CartLocalDataSourceImpl implements CartLocalDataSource {
   @override
   List<ProductModel> getProducts() {
     return [
-      ProductModel(prID: 1, prName: 'prName', price: '350', qty: 0),
-      ProductModel(prID: 2, prName: 'prCame', price: '250', qty: 0),
-      ProductModel(prID: 3, prName: 'prXame', price: '150', qty: 0),
-      ProductModel(prID: 4, prName: 'prRame', price: '450', qty: 0),
+      ProductModel(prID: 1, prName: 'Prod1', price: 350, qty: 0),
+      ProductModel(prID: 2, prName: 'Prod2', price: 250, qty: 0),
+      ProductModel(prID: 3, prName: 'Prod3', price: 150, qty: 0),
+      ProductModel(prID: 4, prName: 'Prod3', price: 450, qty: 0),
     ];
   }
 
