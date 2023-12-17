@@ -20,11 +20,13 @@ jobs:
         with:
           channel: 'stable'
       - run: flutter pub get
-      - run: flutter build apk --debug --split-per-abi
+      - run: flutter build apk --debug
+
+          #      - run: flutter build apk --debug --split-per-abi
 
       - name: Push to release
         uses: ncipollo/release-action@v1
         with:
           artifacts: "build/app/outputs/apk/debug/*"
-          tag: v0.0.1
+          tag: v0.0.2
           token: ${{ secrets.TOKEN }}
