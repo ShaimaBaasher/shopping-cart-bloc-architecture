@@ -11,8 +11,8 @@ class LoadingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.max,
+      child: ListView(
+        shrinkWrap: true,
         children: [
           const CircularProgressIndicator(),
           const SizedBox(
