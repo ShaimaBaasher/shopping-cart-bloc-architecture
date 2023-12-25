@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -7,6 +8,9 @@ import 'package:shopping_cart/src/home/presentation/views/widgets/product_widget
 
 import '../../../../core/routes/app_routes.dart';
 import '../../../../core/routes/pages.dart';
+
+final firebaseAnalytics = FirebaseAnalytics.instance;
+final observer = FirebaseAnalyticsObserver(analytics: firebaseAnalytics);
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -27,12 +31,21 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void initState() {
+    firebaseAnalytics.logEvent(
+      name: "projectD_view",
+    );
     getInitProducts();
     super.initState();
   }
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    firebaseAnalytics.logEvent(name: 'app_started'); // Log a custom event
     return Scaffold(
       appBar: AppBar(
         title: const Text('Product List'),
