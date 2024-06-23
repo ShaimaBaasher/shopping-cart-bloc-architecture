@@ -31,9 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void initState() {
-    firebaseAnalytics.logEvent(
-      name: "projectD_view",
-    );
+    firebaseAnalytics.logEvent(name: "projectD_view",);
     getInitProducts();
     super.initState();
   }

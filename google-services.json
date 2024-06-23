@@ -1,0 +1,91 @@
+{
+  "project_info": {
+    "project_number": "838632393551",
+    "firebase_url": "https://shaima-dac76.firebaseio.com",
+    "project_id": "shaima-dac76",
+    "storage_bucket": "shaima-dac76.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:838632393551:android:8f0331b0a90b603913533a",
+        "android_client_info": {
+          "package_name": "com.pertoport.www"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "838632393551-c61ktvbbghrn96tfn9t75t131tmtrc2j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pertoport.www",
+            "certificate_hash": "60c694fdf74e475668151eb8ad0c7043c5306665"
+          }
+        },
+        {
+          "client_id": "838632393551-h8igdoo70a0lppmv3e553rnv7ni2v445.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEw9cpVfP-h6fm0dEtclawuG7D_sByVOE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "838632393551-h8igdoo70a0lppmv3e553rnv7ni2v445.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "838632393551-2r789iub1t3ra92i91d1910kt32mqoif.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.fekra.Login"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:838632393551:android:6f32141010cfc04913533a",
+        "android_client_info": {
+          "package_name": "com.shopping_cart.shopping_cart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "838632393551-h8igdoo70a0lppmv3e553rnv7ni2v445.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEw9cpVfP-h6fm0dEtclawuG7D_sByVOE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "838632393551-h8igdoo70a0lppmv3e553rnv7ni2v445.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "838632393551-2r789iub1t3ra92i91d1910kt32mqoif.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.fekra.Login"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

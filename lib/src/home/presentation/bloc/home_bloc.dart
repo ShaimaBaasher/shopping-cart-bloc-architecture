@@ -10,6 +10,7 @@ part 'home_state.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   var productList = <Product>[];
+  final GetProductsUseCase _getProductsUseCase;
 
   HomeBloc({required GetProductsUseCase getProductsUseCase})
       : _getProductsUseCase = getProductsUseCase,
@@ -20,7 +21,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<RemoveProductEvent>(_resetProductQtyHandler);
   }
 
-  final GetProductsUseCase _getProductsUseCase;
 
   void _getProductsHandler(GetProductsEvent event, Emitter<HomeState> emitter) {
     final result = _getProductsUseCase();
