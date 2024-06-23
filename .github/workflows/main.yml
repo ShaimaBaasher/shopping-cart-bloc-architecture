@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-     - master
+     - test_branch
 
 name: Build My App
 
